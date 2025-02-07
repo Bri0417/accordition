@@ -54,7 +54,7 @@ let myCharts;
 let jsonData;
 
 fetch('data.json')
-.then(function (response) {
+.then(function(response) {
   if (response.ok == true) {
     return response.json();
   }
@@ -66,7 +66,7 @@ fetch('data.json')
 });
 
 function setChartType(chartType) {
-  myChart.destroy();
+  myCharts.destroy();
   createChart(jsonData, chartType)
 }
 
