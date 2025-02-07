@@ -6,7 +6,7 @@ $(document).ready(function () {
     $(".accordion-body").not($(this).next()).slideUp();
   });
 
-  // Dynanamic LIst
+  // Dynanamic List
   $("#addItem").click(function () {
     var itemText = $("#itemInput").val().trim();
     if (itemText !== "") {
@@ -47,3 +47,48 @@ $(document).ready(function () {
     }
   });
 });
+
+// Chart
+const ctx = document.getElementById('myChart');
+let myCharts;
+let jsonData;
+
+fetch('data.json')
+.then(function (response) {
+  if (response.ok == true) {
+    return response.json();
+  }
+})
+
+.then(function (data) {
+  jsonData = data;
+  createChart(data, 'pie')
+});
+
+function setChartType(chartType) {
+  myChart.destroy();
+  createChart(jsonData, chartType)
+}
+
+function createChart(data, type) {
+
+  myCharts = new Chart(ctx, {
+    type: type,
+    data: {
+      labels: data.map(row => row.studant_name),
+      datasets: [{
+        label: '# of Votes',
+        data: data.map(row => row.mark),
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      },
+      maintainAspectRatio: false
+    }
+  });
+}
