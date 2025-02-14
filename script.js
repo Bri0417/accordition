@@ -51,14 +51,14 @@ $(document).ready(function () {
 $(document).ready(function () {
 
   $('#search-toggle').click(function (e) {
-      e.stopPropagation();
-      $('#search-box').toggleClass('show');
+    e.stopPropagation();
+    $('#search-box').toggleClass('show');
   });
 
   $(document).click(function (e) {
-      if (!$(e.target).closest('.search-box, #search-toggle').length) {
-          $('#search-box').removeClass('show');
-      }
+    if (!$(e.target).closest('.search-box, #search-toggle').length) {
+      $('#search-box').removeClass('show');
+    }
   });
 });
 // Chart
@@ -105,14 +105,14 @@ function createChart(data, type) {
     }
   });
 }
-$( function() {
-  $( "#draggable" ).draggable();
-  $( "#droppable" ).droppable({
-    drop: function( event, ui ) {
-      $( this )
-        .addClass( "ui-state-highlight" )
-        .find( "p" )
-          .html( "Dropped!" );
+$(function () {
+  $("#draggable").draggable();
+  $("#droppable").droppable({
+    drop: function (event, ui) {
+      $(this)
+        .addClass("ui-state-highlight")
+        .find("p")
+        .html("Dropped!");
     }
   });
-} );
+});
