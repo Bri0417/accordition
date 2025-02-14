@@ -54,16 +54,16 @@ let myCharts;
 let jsonData;
 
 fetch('data.json')
-.then(function(response) {
-  if (response.ok == true) {
-    return response.json();
-  }
-})
+  .then(function (response) {
+    if (response.ok == true) {
+      return response.json();
+    }
+  })
 
-.then(function (data) {
-  jsonData = data;
-  createChart(data, 'pie')
-});
+  .then(function (data) {
+    jsonData = data;
+    createChart(data, 'pie')
+  });
 
 function setChartType(chartType) {
   myCharts.destroy();
@@ -92,19 +92,7 @@ function createChart(data, type) {
     }
   });
 }
-$( function() {
-  $( "#draggables" ).draggable();
+$(function () {
+  $("#draggables").draggable();
 
-} );
-// Droppable
-$( function() {
-  $( "#draggable" ).draggable();
-  $( "#droppable" ).droppable({
-    drop: function( event, ui ) {
-      $( this )
-        .addClass( "ui-state-highlight" )
-        .find( "p" )
-          .html( "Dropped!" );
-    }
-  });
-} );
+});
