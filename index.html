@@ -12,6 +12,32 @@
 </head>
 
 <body>
+    <div class="header">
+        <div class="nav-links">
+            <div class="nav-item active"><a href="#">Home</a></div>
+            <div class="nav-item has-dropdown">
+                <a href="#">Expertise <span class="arrow"></span></a>
+                <ul class="dropdown-menu">
+                    <li>Surveillance & Response</li>
+                    <li>Vector Control</li>
+                    <li>Vivax</li>
+                    <li>Interest Groups</li>
+                </ul>
+            </div>
+            <div class="nav-item has-dropdown">
+                <a href="#">Partners <span class="arrow"></span></a>
+                <ul class="dropdown-menu">
+                    <li>Partner 1</li>
+                    <li>Partner 2</li>
+                    <li>Partner 3</li>
+                </ul>
+            </div>
+            <div class="nav-item"><a href="#">Engage</a></div>
+            <div class="nav-item"><a href="#">Resources</a></div>
+            <div class="nav-item"><a href="#">About</a></div>
+        </div>
+        <div class="search-icon">&#128269;</div>
+    </div>
         <button id="toggleSidebar" class="sidebar-btn">NOTIFICATION</button>
     <div class="sidebar" id="sidebar">
         <button class="close-btn" id="closeSidebar">&times;</button>
@@ -61,8 +87,24 @@
         <canvas id="myChart"></canvas>
       </div>
 </div>
+<div class="container mt-5">
+    <h2 class="text-align">Draggable</h2>
+    <div id="draggables" class="ui-widget-content">
+        <p>Drag me around</p>
+    </div>
+    <div class="container mt-5">
+    <h2 class="text-align">Draggable</h2>
+    <div id="draggable" class="ui-widget-content">
+        <p>Drag me to my target</p>
+      </div>
+       
+      <div id="droppable" class="ui-widget-header">
+        <p>Drop here</p>
+      </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
     <script src="script.js"></script>
 </body>
 
