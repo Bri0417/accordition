@@ -101,7 +101,29 @@ body {
     align-items: center;
     gap: 5px;
     cursor: pointer;
+    color: #f15a24;
     font-size: 14px;
+}
+.search-text {
+    font-size: 12px;
+}
+.search-box {
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: 270px;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.search-box input {
+    padding: 5px 20px;
+    width: 250px;
+    border: 1px solid #f15a24;
+    border-radius: 20px;
+}
+.search-box.show {
+    display: block;
+    opacity: 1;
 }
 .search-text {
     font-size: 14px;
@@ -262,4 +284,26 @@ body {
     box-shadow: 0 0 #ccc;
     width: 200px;
     height: 200px;
+}
+#draggable {
+    width: 100px;
+    height: 100px;
+    padding: 0.5em;
+    float: left;
+    margin: 10px 10px 10px 0;
+}
+#droppable {
+    width: 150px;
+    height: 150px;
+    padding: 0.5em;
+    float: left;
+    margin: 10px;
+    color: #fff;
+    background-color: #000;
+}
+.align-center{
+    text-align: center;
+}
+.justify-content{
+justify-content: center;
 }

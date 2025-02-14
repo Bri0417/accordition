@@ -47,7 +47,20 @@ $(document).ready(function () {
     }
   });
 });
+// toggled search 
+$(document).ready(function () {
 
+  $('#search-toggle').click(function (e) {
+      e.stopPropagation();
+      $('#search-box').toggleClass('show');
+  });
+
+  $(document).click(function (e) {
+      if (!$(e.target).closest('.search-box, #search-toggle').length) {
+          $('#search-box').removeClass('show');
+      }
+  });
+});
 // Chart
 const ctx = document.getElementById('myChart');
 let myCharts;
@@ -92,7 +105,14 @@ function createChart(data, type) {
     }
   });
 }
-$(function () {
-  $("#draggables").draggable();
-
-});
+$( function() {
+  $( "#draggable" ).draggable();
+  $( "#droppable" ).droppable({
+    drop: function( event, ui ) {
+      $( this )
+        .addClass( "ui-state-highlight" )
+        .find( "p" )
+          .html( "Dropped!" );
+    }
+  });
+} );

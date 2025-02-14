@@ -36,10 +36,14 @@
             <div class="nav-item"><a href="#">Resources</a></div>
             <div class="nav-item"><a href="#">About</a></div>
         </div>
-        <div class="search-container">
+        <div class="search-container" id="search-toggle">
             <span class="search-text">Search</span>
             <i class="fas fa-search"></i>
         </div>
+    </div>
+    <div class="search-box" id="search-box">
+        <input type="text" placeholder="Search...">
+    </div>
     </div>
     <button id="toggleSidebar" class="sidebar-btn">NOTIFICATION</button>
     <div class="sidebar" id="sidebar">
@@ -99,20 +103,22 @@
             <canvas id="myChart"></canvas>
         </div>
     </div>
-    <div class="container mt-5">
-        <h2 class="text-align">Draggable</h2>
-        <div id="draggables" class="ui-widget-content">
-            <p>Drag me around</p>
-        </div>
-        <div class="container mt-5">
+    
+        <div class="container mt-5 align-center">
             <h2 class="text-align">Draggable</h2>
-            <div id="draggable" class="ui-widget-content">
-                <p>Drag me to my target</p>
+            <div class="row justify-content">
+                <div id="draggable" class="ui-widget-content">
+                    <p>Drag me to my target</p>
+                </div>
+    
+                <div id="droppable" class="ui-widget-header">
+                    <p>Drop here</p>
+                </div>
+                <div id="resizable" class="ui-widget-content">
+                    <h3 class="ui-widget-header">Resizable</h3>
+                  </div>
             </div>
-
-            <div id="droppable" class="ui-widget-header">
-                <p>Drop here</p>
-            </div>
+           
         </div>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
